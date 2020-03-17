@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:controls="clr-namespace:App175"
+             x:Class="App175.MainPage">
+
+    <StackLayout Orientation="Vertical">
+        <ListView SelectionMode="None" RowHeight="90"  x:Name="MyListView">
+
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>mono</x:String>
+                    <x:String>monodroid</x:String>
+                    <x:String>monotouch</x:String>
+                    <x:String>monorail</x:String>
+                </x:Array>
+            </ListView.ItemsSource>
+
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+         
+                        <AbsoluteLayout HeightRequest="70" Margin="20,10,20,10">
+                            <StackLayout Opacity="0.3" BackgroundColor="White"
+                                    AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                                    AbsoluteLayout.LayoutFlags="All" />
+                            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                                    AbsoluteLayout.LayoutFlags="All">
+                                <Grid RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="35" />
+                                        <RowDefinition Height="35" />
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="70" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <controls:IconView Source="chat_lock.png" Grid.RowSpan="2" Grid.Column="0" Margin="5" Foreground="Yellow"  WidthRequest="100"
+                                        HeightRequest="100"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"/>
+
+
+                                </Grid>
+                            </StackLayout>
+                        </AbsoluteLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
